@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/style.css" id="theme-stylesheet">
+    <link rel="icon" href="images/pencil.png">
+    <title>Store</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class = "logo">
+        <div class = "gridContainer">
+             <form id="logoSpace">
+                <a href = "./index.html"><img src = "images/JT Logo White.png" id = 'logo' 
+                    width="200px" height="50px" alt= 'Journal Time' title="Home"></a>
+                <a href="#settings-popup" class="button" id="settings" title="Settings" 
+                    tabindex="0" style="float:right">
+                    <img id="settings-icon" src="images/settings icon.webp"></a>
+                <a href="./login.html" id="login" class="button" title="Login"
+                    tabindex="0" style="float:right">
+                        Login</a>
+                <a href="./store.html" id="store" class="button" title="Store"
+                    tabindex="0" style="float:right">Store
+                       </a>
+                <a href="./tracking.html" id="tracking" class="button" title="Emotion Tracking"
+                    tabindex="0" style="float:right">Tracking
+                        </a>
+                <a href="./entries.html" id="pastEntries" class="button" title="Past Entries"
+                    tabindex="0" style="float:right">
+                        Entries</a>
+             </form>
+            </div>
+    </section>
+    <hr/>
+    <section class="shopHeader">
+        <div>
+            <input class="storeSearch" type="search" placeholder="Search all items">
+            <a href="#filterPopup" id="storeFilter" class="button" title="Filters">Filter</a>
+            <select name="sortOptions" id="sortOptions" class="button" title="Sort">
+                <option value="featured">Featured</option>
+                <option value="bestSelling">Best Selling</option>
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="priceHigh-low">Price Descending</option>
+                <option value="priceLow-high">Price Ascending</option>
+            </select>
+        </div>
+        <div id="filterPopup" class="popup">
+            <div class="content">
+                <hi>Filters</hi>
+                <button class="button" id="clearFilters-s" style="float:right">Clear</button>
+                <a href="#" class="box-close">
+                    x
+                </a>
+            </div>
+        </div>
+         <div class="storeBalance">
+            <span title="Journal to earn more crystals"  style="float:right">
+                Balance:  
+            </span>
+            <img src="images/crystal.png" id="crystal" style="float:right" title="Journal to earn more crystals">
+         </div>
+    </section>
+    <script>
+
+    </script>
+    <section class="section" id="storeItems">
+        <button class="button" id="title" onclick="showSection('themes')">Themes</button>
+        <div class="theme-container">
+            <button class="pre-btn" onclick="scrollThemeContainer('left')"><img src="images/arrow.png" class="arrow" alt=""></button>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Beach theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Wild West theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Slime theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <button class="nxt-btn" onclick="scrollThemeContainer('right')"><img src="images/arrow.png" class="arrow" alt=""></button>
+        </div>
+        <button class="button" id="title" onclick="showSection('prompts')">Prompt Packages</button>
+        <div class="prompt-container">
+            <button class="pre-btn" onclick="scrollPromptContainer('left')"><img src="images/arrow.png" class="arrow" alt=""></button>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Funny Prompts</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Serious Prompts</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Would You Rather</h3>
+                    <span class="price">10 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Barnyard theme</h3>
+                    <span class="price">15 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <button class="nxt-btn" onclick="scrollPromptContainer('right')"><img src="images/arrow.png" class="arrow" alt=""></button>
+        </div>
+        <button class="button" id="title">Pets</button>
+        <div class="pet-container">
+            <button class="pre-btn" onclick="scrollPetContainer('left')"><img src="images/arrow.png" class="arrow" alt=""></button>
+            <button class="nxt-btn" onclick="scrollPetContainer('right')"><img src="images/arrow.png" class="arrow" alt=""></button>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Dog</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cat</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Beta Fish</h3>
+                    <span class="price">10 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Terrapin</h3>
+                    <span class="price">15 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="themes">
+        <a href="./store.html"><button class="button" id="back-btn" title="back"><img class="back-arrow" src="images/back-arrow.png"></button></a>
+        <button class="section-title" id="title">Themes</button>
+        <div class="product-group-page">
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Dog</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cat</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Beta Fish</h3>
+                    <span class="price">10 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+        </div>
+                
+    </section>
+    <section class="section" id="prompts">
+        <a href="./store.html"><button class="button" id="back-btn" title="back"><img class="back-arrow" src="images/back-arrow.png"></button></a>
+        <button class="section-title" id="title">Prompt Packages</button>
+        <div class="product-group-page">
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Dog</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cat</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Beta Fish</h3>
+                    <span class="price">10 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">
+                    <img src="images/crystal.png" class="product-image" alt="">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rose theme</h3>
+                    <span class="price">5 crystals</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="settings-popup" class="popup">        
+        <div class="content" id="settings-content">
+            <!--<button class="button" id="theme-toggle" onclick="changeColor()">Toggle Theme</button>-->
+            <a href="#" class="box-close">x</a>
+            <button class="button" id="default-theme-toggle">Default Theme</button>
+            <button class="button" id="slime-theme-toggle">Slime Theme</button>
+            <button class="button" id="rose-theme-toggle">Rose Theme</button>
+            <button class="button" id="beach-theme-toggle">Beach Theme</button>
+            <button class="button" id="wild-west-theme-toggle">Wild West Theme</button>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>

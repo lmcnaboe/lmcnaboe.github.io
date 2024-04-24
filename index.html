@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Journaling, Journal, emotions, pets, online journaling, online journal, emotions">
+    <link rel="stylesheet" href="sass/style.css" id="theme-stylesheet">
+    <title>Journal Time!</title>
+    <link rel="icon" href="images/pencil.png">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section class = "logo">
+            <div class = "gridContainer">
+            <form id="logoSpace">
+                <a href = "./index.html"><img src = "images/JT Logo White.png" id = 'logo' 
+                    width="200px" height="50px" alt= 'Journal Time' title="Home"></a>
+                <a href="#settings-popup" class="button" id="settings" title="Settings" 
+                    tabindex="0" style="float:right"><img id="settings-icon" src="images/settings icon.webp"></a>
+                <a href="login.html" id="login" class="button" title="Login"
+                tabindex="0" style="float:right">Login
+                   </a>
+                <a href="store.html" id="store" class="button" title="Store"
+                tabindex="0" style="float:right">Store
+                   </a>
+                <a href="tracking.html" id="tracking" class="button" title="Emotion Tracking"
+                tabindex="0" style="float:right">Tracking
+                    </a>
+                <a href="entries.html" id="pastEntries" class="button" title="Entries"
+                tabindex="0" style="float:right">
+                    Entries</a>
+            </form>
+        </div>
+        </section>
+        <hr/>
+        <section class="promptContainer">
+                <hi>Prompts:</hi>
+                <button id="seriousPrompt" class="button" title = "Generate Serious Prompt"
+                tabindex="0">Serious Prompt</button>
+                <button id="funnyPrompt" class="button" title = "Generate Funny Prompt"
+                tabindex="0">Funny Prompt</button>
+                <a href="./store.html"><button id="morePrompts" class="button" title = "Add More Prompt Packages"
+                tabindex="0">+</button></a>
+        </section>
+        <div class="userInput">
+            <div class = "input" id="journalEntry">
+                <hi>What's something you want to get off your chest?</hi>
+                <form id="itemEntryForm">
+                    <textarea id="journalSpace" type="text" name="entry"
+                    autocomplete="off" placeholder="Start journaling here..." tabindex="0"></textarea>
+                    <button class="button" id="submit-entry">Submit</button>
+                </form>
+                </div>
+            <div class="input" id="emotionTracking">
+                <hi id="emotionTitle">How are you feeling?</hi>
+                <div class="emotionGroup">
+                    <button type="button" class="emotion-button" id="highNegative" onclick="fade(this), highNegList(this)">High Energy Negative</button>
+                    <ul class="highNeg-list">
+                        <li><button type="button" class="emotion" id="highNeg">anxious</button></li>
+                        <li><button type="button" class="emotion" id="highNeg">angry</button></li>
+                        <li><button type="button" class="emotion" id="highNeg">stressed</button></li>
+                        <li><button type="button" class="emotion" id="highNeg">confused</button></li>
+                        <li><button type="button" class="emotion" id="highNeg">frustrated</button></li>
+                    </ul>
+                    <button type="button" class="emotion-button" id="highPositive" onclick="fade(this), highPosList(this)">High Energy Positive</button>
+                    <ul class="highPos-list">
+                        <li><button type="button" class="emotion" id="highPos">estatic</button></li>
+                        <li><button type="button" class="emotion" id="highPos">happy</button></li>
+                        <li><button type="button" class="emotion" id="highPos">excited</button></li>
+                        <li><button type="button" class="emotion" id="highPos">suprised</button></li>
+                        <li><button type="button" class="emotion" id="highPos">motivated</button></li>
+                    </ul>
+                </div>
+                <div class="emotionGroup">
+                    <button type="button" class="emotion-button" id="lowNegative" onclick="fade(this), lowNegList(this)">Low Energy Negative</button>
+                    <ul class="lowNeg-list">
+                        <li><button type="button" class="emotion" id="lowNeg">sad</button></li>
+                        <li><button type="button" class="emotion" id="lowNeg">bored</button></li>
+                        <li><button type="button" class="emotion" id="lowNeg">tired</button></li>
+                        <li><button type="button" class="emotion" id="lowNeg">miserable</button></li>
+                        <li><button type="button" class="emotion" id="lowNeg">disgusted</button></li>
+                    </ul>
+                    <button type="button" class="emotion-button" id="lowPositive" onclick="fade(this), lowPosList(this)">Low Energy Positive</button>
+                    <ul class="lowPos-list">
+                        <li><button type="button" class="emotion" id="lowPos">good</button></li>
+                        <li><button type="button" class="emotion" id="lowPos">relaxed</button></li>
+                        <li><button type="button" class="emotion" id="lowPos">satisfied</button></li>
+                        <li><button type="button" class="emotion" id="lowPos">content</button></li>
+                        <li><button type="button" class="emotion" id="lowPos">grateful</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="settings-popup" class="popup">        
+            <div class="content" id="settings-content">
+                <!--<button class="button" id="theme-toggle" onclick="changeColor()">Toggle Theme</button>-->
+                <a href="#" class="box-close">x</a>
+                <button class="button" id="default-theme-toggle">Default Theme</button>
+                <button class="button" id="slime-theme-toggle">Slime Theme</button>
+                <button class="button" id="rose-theme-toggle">Rose Theme</button>
+                <button class="button" id="beach-theme-toggle">Beach Theme</button>
+                <button class="button" id="wild-west-theme-toggle">Wild West Theme</button>
+                <!--add more themes here, do with different css files-->
+                <!-- onclick="applyTheme('sass/style.css')"
+                onclick="applyTheme('sass/test_theme.css')"
+                onclick="applyTheme('sass/rose_theme.css')"
+                onclick="applyTheme('sass/beach_theme.css')"
+                onclick="applyTheme('sass/beach_theme.css')"
+                onclick="applyTheme('sass/wild_west_theme.css')" -->
+            </div>
+        </div>
+        <footer>
+            <div class="footerContent">
+                <a href = "./index.html"><img src = "images/JT Logo White.png" id = 'logo' class="button" 
+                    width="200px" height="50px" alt= 'Journal Time' title="Home"></a>
+            </div>
+            <div class="footerContainter">
+                <ul class="footerItems">
+                    <li><a href="./about.html" class="button" id="footerTab">About</a></li>
+                    <li><a href="./about.html#contact" class="button" id="footerTab">Contact</a></li>
+                </ul>
+                <hi id="est">est. 2024</hi>
+            </div>
+        </footer>
+    </main>
+    <script src="js/index.js"></script>
+    <!-- <script>
+        window.onload = loadSelectedTheme;
+  </script> -->
+</body>
+</html>
